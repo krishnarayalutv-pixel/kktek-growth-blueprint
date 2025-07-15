@@ -13,13 +13,18 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm shadow-sm border-border">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-primary font-sans">
-              KKTEK<span className="text-accent">GROUP</span>
+            <a href="/" className="flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
+              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg font-space-grotesk">K</span>
+              </div>
+              <span className="text-2xl font-bold text-primary font-space-grotesk tracking-tight">
+                KKTEK<span className="text-accent">GROUP</span>
+              </span>
             </a>
           </div>
 
@@ -37,7 +42,7 @@ const Header = () => {
                   Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-80 p-4 bg-white shadow-lg border rounded-lg">
+                  <div className="w-80 p-4 bg-background shadow-lg border border-border rounded-lg backdrop-blur-sm">
                     <div className="grid gap-4">
                       {/* Software & IT Group */}
                       <div className="space-y-2">
@@ -97,7 +102,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t bg-white py-4">
+          <div className="md:hidden border-t bg-background/95 backdrop-blur-sm border-border py-4">
             <nav className="flex flex-col space-y-4">
               <a href="/about" className="text-foreground hover:text-primary transition-colors">
                 About Us

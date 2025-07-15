@@ -20,6 +20,8 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ["Inter", "sans-serif"],
+				poppins: ["Poppins", "sans-serif"],
+				'space-grotesk': ["Space Grotesk", "sans-serif"],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -30,7 +32,8 @@ export default {
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
-					glow: 'hsl(var(--primary-glow))'
+					glow: 'hsl(var(--primary-glow))',
+					bright: 'hsl(var(--primary-bright))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -46,7 +49,8 @@ export default {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					foreground: 'hsl(var(--accent-foreground))',
+					cyan: 'hsl(var(--accent-cyan))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -71,11 +75,13 @@ export default {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-cta': 'var(--gradient-cta)',
-				'gradient-dark': 'var(--gradient-dark)'
+				'gradient-dark': 'var(--gradient-dark)',
+				'gradient-neon': 'var(--gradient-neon)'
 			},
 			boxShadow: {
 				'glow': 'var(--shadow-glow)',
-				'card': 'var(--shadow-card)'
+				'card': 'var(--shadow-card)',
+				'neon': 'var(--shadow-neon)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -106,6 +112,19 @@ export default {
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'bounce-scale': {
+					'0%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.1)' },
+					'100%': { transform: 'scale(1)' }
+				},
+				'pulse-glow': {
+					'0%, 100%': { boxShadow: '0 0 20px hsl(var(--primary) / 0.3)' },
+					'50%': { boxShadow: '0 0 40px hsl(var(--primary) / 0.6)' }
+				},
+				'scroll-fade-up': {
+					'0%': { opacity: '0', transform: 'translateY(30px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
@@ -114,7 +133,10 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.8s ease-out',
 				'count-up': 'count-up 0.8s ease-out',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'bounce-scale': 'bounce-scale 0.6s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'scroll-fade-up': 'scroll-fade-up 0.8s ease-out'
 			}
 		}
 	},

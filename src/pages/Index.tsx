@@ -6,6 +6,7 @@ import AboutPreview from "@/components/AboutPreview";
 import WhatSetsUsApart from "@/components/WhatSetsUsApart";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <WhatSetsUsApart />
       <CTASection />
       <Footer />
+      <BackToTop />
     </div>
   );
 };
