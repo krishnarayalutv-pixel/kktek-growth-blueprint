@@ -86,7 +86,7 @@ const Services = () => {
             return (
               <div key={index} className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-16`}>
                 {/* Icon Section */}
-                <div className="flex-1 flex justify-center lg:justify-start">
+                <div className="flex-1 flex justify-center">
                   <div className="w-32 h-32 bg-gradient-primary rounded-2xl flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-glow">
                     <Icon className="h-16 w-16 text-white" />
                   </div>
