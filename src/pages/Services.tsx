@@ -76,34 +76,37 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Alternating Layout */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 bg-card border-border">
-                  <CardContent className="p-8">
-                    <div className="mb-6">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <Icon className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold text-foreground mb-3 font-space-grotesk">
-                        {service.title}
-                      </h3>
-                      <p className="text-accent font-medium mb-4">
-                        {service.description}
-                      </p>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.details}
-                    </p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
+        <div className="container mx-auto px-4 space-y-20">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            const isEven = index % 2 === 1;
+            
+            return (
+              <div key={index} className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-16`}>
+                {/* Icon Section */}
+                <div className="flex-1 flex justify-center lg:justify-start">
+                  <div className="w-32 h-32 bg-gradient-primary rounded-2xl flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-glow">
+                    <Icon className="h-16 w-16 text-white" />
+                  </div>
+                </div>
+                
+                {/* Text Section */}
+                <div className="flex-1 text-center lg:text-left">
+                  <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 font-space-grotesk">
+                    {service.title}
+                  </h3>
+                  <p className="text-xl text-accent font-medium mb-6">
+                    {service.description}
+                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    {service.details}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
