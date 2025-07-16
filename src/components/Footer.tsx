@@ -72,12 +72,12 @@ const Footer = () => {
             <h3 className="font-semibold text-white mb-4 font-sans">Contact</h3>
             <div className="space-y-2 text-gray-300">
               <p>
-                <a href="mailto:contact@kktekgroup.com" className="hover:text-white transition-colors">
-                  contact@kktekgroup.com
+                <a href="mailto:info@kktekgroup.com" className="hover:text-white transition-colors">
+                  info@kktekgroup.com
                 </a>
               </p>
-              <p>+1 (555) 123-4567</p>
-              <p>123 Business Ave<br />Tech City, TC 12345</p>
+              <p>+91 77996 82725</p>
+              <p>Bhagya nagar colony<br />Kukatpally, 500072</p>
             </div>
           </div>
           

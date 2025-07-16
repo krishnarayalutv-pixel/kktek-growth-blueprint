@@ -54,7 +54,7 @@ const ServicesCarousel = () => {
           </p>
         </div>
         
-        <div className="relative overflow-hidden rounded-xl bg-background shadow-card">
+        <div className="relative overflow-hidden rounded-xl bg-background shadow-card cursor-pointer group" onClick={() => window.location.href = '/services'}>
           <div 
             className="flex transition-transform duration-1000 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -67,12 +67,13 @@ const ServicesCarousel = () => {
                 <img
                   src={service.image}
                   alt={service.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 text-white">
                   <h3 className="text-2xl font-bold mb-2">{service.name}</h3>
                   <p className="text-white/90">{service.description}</p>
+                  <p className="text-white/70 text-sm mt-2">Click to view all services →</p>
                 </div>
               </div>
             ))}
