@@ -18,21 +18,22 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg font-space-grotesk">K</span>
-              </div>
-              <span className="text-2xl font-bold text-primary font-space-grotesk tracking-tight">
-                KKTEK<span className="text-accent">GROUP</span>
-              </span>
-            </a>
+           <a href="/" className="flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
+  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center overflow-hidden">
+    <img src="/logo.png" alt="KKTEK Logo" className="object-contain w-8 h-8" />
+  </div>
+  <span className="text-2xl font-bold text-primary font-space-grotesk tracking-tight">
+    KKTEK<span className="text-accent">GROUP</span>
+  </span>
+</a>
+
           </div>
 
           {/* Desktop Navigation */}
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList className="space-x-8">
               <NavigationMenuItem>
-                <a href="/about" className="text-foreground hover:text-primary transition-colors font-medium">
+                <a href="/" className="text-foreground hover:text-primary transition-colors font-medium">
                   About Us
                 </a>
               </NavigationMenuItem>
@@ -104,7 +105,7 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden border-t bg-background/95 backdrop-blur-sm border-border py-4">
             <nav className="flex flex-col space-y-4">
-              <a href="/about" className="text-foreground hover:text-primary transition-colors">
+              <a href="/" className="text-foreground hover:text-primary transition-colors">
                 About Us
               </a>
               <div className="space-y-2">
