@@ -29,12 +29,12 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button variant="hero" size="lg" className="text-lg px-8 py-4 font-poppins hover:shadow-neon hover:scale-105 transition-all duration-300">
-                Get Started
+               <a href="/services"> Get Started </a>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
               <Button variant="outline" size="lg" className="text-lg px-8 py-4 font-poppins hover:shadow-glow hover:scale-105 transition-all duration-300">
-                Explore Our Services
+               <a href="/services"> Explore Our Services</a>
               </Button>
             </div>
           </div>
