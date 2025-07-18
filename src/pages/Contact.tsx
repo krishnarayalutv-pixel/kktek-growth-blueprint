@@ -71,7 +71,7 @@ const onSubmit = async (data: ContactFormData) => {
     console.log("Server Response:", result);
 
     if (result === "Contact saved successfully") {
-      alert("Thank you for your message! We'll get back to you soon.");
+     // alert("Thank you for your message! We'll get back to you soon.");
       setIsSubmitted(true);
       form.reset(); // Clear the form fields
     } else {
