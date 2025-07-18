@@ -45,12 +45,44 @@ const Contact = () => {
     },
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log("Form submitted:", data);
-    setIsSubmitted(true);
-    form.reset();
-    // In a real app, you would send this data to your backend
-  };
+  // const onSubmit = (data: ContactFormData) => {
+  //   console.log("Form submitted:", data);
+  //   setIsSubmitted(true);
+  //   form.reset();
+  //   // In a real app, you would send this data to your backend
+  // };
+
+const onSubmit = async (data: ContactFormData) => {
+  try {
+    const response = await fetch("https://kktek-backend.onrender.com/contact", {
+                                  
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to submit form");
+    }
+
+    const result = await response.text(); // Reading plain text from backend
+    console.log("Server Response:", result);
+
+    if (result === "Contact saved successfully") {
+      alert("Thank you for your message! We'll get back to you soon.");
+      setIsSubmitted(true);
+      form.reset(); // Clear the form fields
+    } else {
+      alert("⚠️ Unexpected response from server: " + result);
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("❌ Something went wrong. Please try again later.");
+  }
+};
+
 
   const contactInfo = [
     {
