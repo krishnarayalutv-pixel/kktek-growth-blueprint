@@ -52,10 +52,40 @@ const Contact = () => {
   //   // In a real app, you would send this data to your backend
   // };
 
-const onSubmit = async (data: ContactFormData) => {
-  try {
-    const response = await fetch("https://kktek-backend.onrender.com/contact", {
+// const onSubmit = async (data: ContactFormData) => {
+//   try {
+//     const response = await fetch("https://kktek-backend.onrender.com/contact", {
                                   
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(data),
+//     });
+
+//     if (!response.ok) {
+//       throw new Error("Failed to submit form");
+//     }
+
+//     const result = await response.text(); // Reading plain text from backend
+//     console.log("Server Response:", result);
+
+//     if (result === "Contact saved successfully") {
+//      // alert("Thank you for your message! We'll get back to you soon.");
+//       setIsSubmitted(true);
+//       form.reset(); // Clear the form fields
+//     } else {
+//       alert("⚠️ Unexpected response from server: " + result);
+//     }
+//   } catch (error) {
+//     console.error("Error:", error);
+//     alert("❌ Something went wrong. Please try again later.");
+//   }
+// };
+
+  const onSubmit = async (data: ContactFormData) => {
+  try {
+    await fetch("https://kktek-backend.onrender.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -63,23 +93,14 @@ const onSubmit = async (data: ContactFormData) => {
       body: JSON.stringify(data),
     });
 
-    if (!response.ok) {
-      throw new Error("Failed to submit form");
-    }
-
-    const result = await response.text(); // Reading plain text from backend
-    console.log("Server Response:", result);
-
-    if (result === "Contact saved successfully") {
-     // alert("Thank you for your message! We'll get back to you soon.");
-      setIsSubmitted(true);
-      form.reset(); // Clear the form fields
-    } else {
-      alert("⚠️ Unexpected response from server: " + result);
-    }
+    // Always show thank you message, no matter what
+    setIsSubmitted(true);
+    form.reset();
   } catch (error) {
     console.error("Error:", error);
-    alert("❌ Something went wrong. Please try again later.");
+    // Still show thank you even if error occurs
+    setIsSubmitted(true);
+    form.reset();
   }
 };
 
